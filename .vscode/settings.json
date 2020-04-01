@@ -1,0 +1,9 @@
+{
+  "javascript.validate.enable": false,
+  "editor.formatOnSave": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": "always"
+  },
+  "eslint.validate": ["javascript", "javascriptreact", "jsx"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode"
+}
