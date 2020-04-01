@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
-const { PrismaClient } = require('@prisma/client')
-const dotenv = require('dotenv')
+const { PrismaClient } = require("@prisma/client")
+const dotenv = require("dotenv")
 
 dotenv.config()
 const db = new PrismaClient()
@@ -16,7 +16,7 @@ async function main() {
   //     await db.user.create({ data: { name: 'Admin', email: 'admin@email.com' }})
   //   }
 
-  console.info('No data to seed. See api/prisma/seeds.js for info.')
+  console.info("No data to seed. See api/prisma/seeds.js for info.")
 }
 
 main()

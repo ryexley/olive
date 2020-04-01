@@ -1,3 +1,7 @@
+# Olive
+
+Drawing inspiration (and borrowing code) from John Dyer's awesome [Bible Reading Plan Generator](https://biblereadingplangenerator.com), this app is intended to take his app a step further and allow people to login and create and save their own Bible Reading Plans, and keep track of their progress on each plan via mobile optimized web app.
+
 # Redwood
 >**HEADS UP:** RedwoodJS is _NOT_ ready for use in Production. It relies heavily on Prisma2, which is currently in testing with an expected production release coming soon. See status at ["Is Prisma2 Ready?"](https://isprisma2ready.com)
 
@@ -5,7 +9,7 @@
 - [Redwoodjs.com](https://redwoodjs.com): home to all things RedwoodJS.
 - [Tutorial](https://redwoodjs.com/tutorial/welcome-to-redwood): getting started and complete overview guide.
 - [Docs](https://redwoodjs.com/docs/introduction): using the Redwood Router, handling assets and files, list of command-line tools, and more.
-- [Redwood Community](https://community.redwoodjs.com): get help, share tips and tricks, and collaborate on everything about RedwoodJS.   
+- [Redwood Community](https://community.redwoodjs.com): get help, share tips and tricks, and collaborate on everything about RedwoodJS.
 
 ### Setup
 

@@ -6,11 +6,27 @@
       "web"
     ]
   },
+  "scripts": {
+    "lint": "eslint api web --cache"
+  },
   "devDependencies": {
     "@redwoodjs/core": "^0.3.2"
   },
   "eslintConfig": {
-    "extends": "@redwoodjs/eslint-config"
+    "extends": "@redwoodjs/eslint-config",
+    "rules": {
+      "quotes": ["error", "double"],
+      "import/order": [
+        "error", {
+          "newlines-between": "never",
+          "alphabetize": {
+            "order": "asc",
+            "caseInsensitive": true
+          }
+        }
+      ],
+      "prettier/prettier": "off"
+    }
   },
   "engines": {
     "node": ">=12",
