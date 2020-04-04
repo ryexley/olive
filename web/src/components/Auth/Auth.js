@@ -1,34 +1,51 @@
 import netlifyIdentity from "netlify-identity-widget"
-import { useSelector } from "react-redux"
+import { useSelector, useDispatch } from "react-redux"
+import { setCurrentUser } from "src/state/app"
 import { isEmpty } from "src/util"
 
-const login = () => {
-  netlifyIdentity.open()
+const register = () => {
+  netlifyIdentity.open("signup")
+}
+
+const login = dispatch => {
+  netlifyIdentity.open("login")
   netlifyIdentity.on("login", user => {
-    console.log({ user })
+    dispatch(setCurrentUser(user))
+    netlifyIdentity.close()
   })
 }
 
-const LoggedIn = () => {
+const logout = dispatch => {
+  netlifyIdentity.logout()
+  netlifyIdentity.on("logout", () => {
+    dispatch(setCurrentUser(null))
+  })
+}
+
+const LoggedIn = ({ dispatch }) => {
   return (
-    <h2>Logged In</h2>
+    <button onClick={() => logout(dispatch)}>Logout</button>
   )
 }
 
-const NotLoggedIn = () => {
+const NotLoggedIn = ({ dispatch }) => {
   return (
-    <button onClick={login}>Login</button>
+    <>
+      <button onClick={() => login(dispatch)}>Login</button>
+      <button onClick={() => register()}>Register</button>
+    </>
   )
 }
 
 const Auth = () => {
+  const dispatch = useDispatch()
   const currentUser = useSelector(({ app }) => app.currentUser)
 
   if (isEmpty(currentUser)) {
-    return <NotLoggedIn />
+    return <NotLoggedIn dispatch={ dispatch } />
   }
 
-  return <LoggedIn />
+  return <LoggedIn dispatch={ dispatch } />
 }
 
 export default Auth
