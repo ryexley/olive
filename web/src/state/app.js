@@ -1,5 +1,4 @@
 import { createReducer } from "./reducer"
-import { isNotEmpty } from "src/util"
 
 const defaultState = {
   isAuthenticated: false,
@@ -10,19 +9,33 @@ export const appReducers = createReducer({
   defaultState,
 
   handlers: {
-    "app:setCurrentUser"(state, { user }) {
+    "app:loggedIn"(state, { user }) {
       return {
         ...state,
         currentUser: user,
-        isAuthenticated: isNotEmpty(user)
+        isAuthenticated: true
+      }
+    },
+
+    "app:loggedOut"(state) {
+      return {
+        ...state,
+        currentUser: null,
+        isAuthenticated: false
       }
     }
   }
 })
 
-export function setCurrentUser(user) {
+export function loggedIn(user) {
   return {
-    type: "app:setCurrentUser",
+    type: "app:loggedIn",
     user
+  }
+}
+
+export function loggedOut() {
+  return {
+    type: "app:loggedOut"
   }
 }

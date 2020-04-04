@@ -1,7 +1,6 @@
 import netlifyIdentity from "netlify-identity-widget"
 import { useSelector, useDispatch } from "react-redux"
-import { setCurrentUser } from "src/state/app"
-import { isEmpty } from "src/util"
+import { loggedIn, loggedOut } from "src/state/app"
 
 const register = () => {
   netlifyIdentity.open("signup")
@@ -10,7 +9,7 @@ const register = () => {
 const login = dispatch => {
   netlifyIdentity.open("login")
   netlifyIdentity.on("login", user => {
-    dispatch(setCurrentUser(user))
+    dispatch(loggedIn(user))
     netlifyIdentity.close()
   })
 }
@@ -18,7 +17,7 @@ const login = dispatch => {
 const logout = dispatch => {
   netlifyIdentity.logout()
   netlifyIdentity.on("logout", () => {
-    dispatch(setCurrentUser(null))
+    dispatch(loggedOut())
   })
 }
 
@@ -39,13 +38,13 @@ const NotLoggedIn = ({ dispatch }) => {
 
 const Auth = () => {
   const dispatch = useDispatch()
-  const currentUser = useSelector(({ app }) => app.currentUser)
+  const isAuthenticated = useSelector(({ app }) => app.isAuthenticated)
 
-  if (isEmpty(currentUser)) {
-    return <NotLoggedIn dispatch={ dispatch } />
+  if (isAuthenticated) {
+    return <LoggedIn dispatch={ dispatch } />
   }
 
-  return <LoggedIn dispatch={ dispatch } />
+  return <NotLoggedIn dispatch={ dispatch } />
 }
 
 export default Auth
