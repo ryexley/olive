@@ -23,7 +23,7 @@ const getInitialState = () => {
     userId = null,
     email = null,
     fullName = null
-  } = getData(process.env.STORAGE_DATA_KEY)
+  } = getData(process.env.STORAGE_DATA_KEY) || {}
 
   return {
     app: {

@@ -1,5 +1,6 @@
 import netlifyIdentity from "netlify-identity-widget"
 import { useSelector, useDispatch } from "react-redux"
+import Button from "@material-ui/core/Button"
 import { loggedIn, loggedOut } from "src/state/app"
 
 const register = () => {
@@ -23,15 +24,30 @@ const logout = dispatch => {
 
 const LoggedIn = ({ dispatch }) => {
   return (
-    <button onClick={() => logout(dispatch)}>Logout</button>
+    <Button
+      variant="contained"
+      color="primary"
+      onClick={() => logout(dispatch)}>
+      Logout
+    </Button>
   )
 }
 
 const NotLoggedIn = ({ dispatch }) => {
   return (
     <>
-      <button onClick={() => login(dispatch)}>Login</button>
-      <button onClick={() => register()}>Register</button>
+      <Button
+        variant="contained"
+        color="primary"
+        onClick={() => login(dispatch)}>
+        Login
+      </Button>
+      <Button
+        variant="outlined"
+        color="primary"
+        onClick={() => register()}>
+        Register
+      </Button>
     </>
   )
 }
