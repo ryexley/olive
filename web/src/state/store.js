@@ -3,11 +3,13 @@ import { composeWithDevTools } from "redux-devtools-extension"
 import thunk from "redux-thunk"
 import { appReducers } from "./app"
 import { persistState } from "./middleware"
+import { readingPlanReducers } from "./reading-plans"
 import { isNotEmpty } from "src/util"
 import { getData } from "src/util/localStorage"
 
 const rootReducer = combineReducers({
-  app: appReducers
+  app: appReducers,
+  readingPlans: readingPlanReducers
 })
 
 const resources = {}
