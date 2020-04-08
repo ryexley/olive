@@ -5,10 +5,7 @@ import { makeStyles } from "@material-ui/core/styles"
 import { isNotEmpty } from "src/util"
 
 const useStyles = makeStyles(() => ({
-  card: {
-    margin: "0 2rem 2rem 0",
-    minWidth: "20rem"
-  },
+  card: {},
   header: {
     backgroundColor: "#f7f7f7"
   },
