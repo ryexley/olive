@@ -1,38 +1,38 @@
 import CheckboxControl from "@material-ui/core/Checkbox"
 import FormControlLabel from "@material-ui/core/FormControlLabel"
 import CalendarDayIcon from "@material-ui/icons/Event"
+import { useState } from "react"
 import OptionsCard from "src/ReadingPlanBuilder/components/OptionsCard"
+import { daysOfTheWeek } from "src/ReadingPlanBuilder"
 
 export default function DaysOfTheWeekOptions() {
-  const onCheckChange = ({ target: { name, checked } }) => {
-    console.log({ name, checked })
+  const dayOfWeekToggled = ({ name, value, checked }) => {
+    console.log({ name, value, checked })
   }
 
-  const days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
-  ]
+  function Checkbox({ name, value, label }) {
+    const [toggled, setToggled] = useState(true)
 
-  function Checkbox({ day }) {
+    const onCheckChanged = ({ target: { name, checked } }) => {
+      setToggled(checked)
+      dayOfWeekToggled(({ name, value, checked }))
+    }
+
     return (
       <FormControlLabel
-        label={ day }
+        checked={ toggled }
+        label={ label }
         control={
           <CheckboxControl
-            name={ day.toLowerCase() }
-            onChange={ onCheckChange } />
+            name={ name }
+            onChange={ onCheckChanged } />
         } />
     )
   }
 
   return (
     <OptionsCard title="Days of the Week" icon={<CalendarDayIcon />}>
-      { days.map(day => <Checkbox day={ day } key={ day.toLowerCase() } />) }
+      { daysOfTheWeek.map(day => <Checkbox { ...day } key={ day.name } />) }
     </OptionsCard>
   )
 }
