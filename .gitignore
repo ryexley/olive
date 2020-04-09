@@ -5,6 +5,7 @@ dev.db
 dist
 dist-babel
 node_modules
+coverage
 yarn-error.log
 .eslintcache
 
