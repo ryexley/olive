@@ -19,7 +19,7 @@ export const daysOfTheWeek = [
 
 export function enhanceDatePrototype() {
   Date.prototype.addDays = function addDays(d) {
-    return new Date(this.getTime() + d * 24 * 60 * 60 * 1000)
+    return new Date(this.getTime() + (d * 24 * 60 * 60 * 1000))
   }
 
   Date.prototype.incrementDay = function incrementDay() {
@@ -78,11 +78,11 @@ export function getArrayValue({ target, lang, property }) {
 }
 
 export function getName({ book, lang }) {
-  return getArrayValue({ book, lang, property: "names" })
+  return getArrayValue({ target: book, lang, property: "names" })
 }
 
 export function getAbbreviation({ book, lang }) {
-  return getArrayValue({ book, lang, property: "abbr" })
+  return getArrayValue({ target: book, lang, property: "abbr" })
 }
 
 export function addNames({
@@ -163,7 +163,7 @@ export function calculateReadingDaysInPlan({
   return readingDays
 }
 
-function generateChapterGroup() {
+export function generateChapterGroup() {
   return {
     name: "default",
     // totals/stats
