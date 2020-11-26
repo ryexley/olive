@@ -1,7 +1,13 @@
-import '../styles/globals.scss'
+import PropTypes from "prop-types"
+import "../styles/globals.scss"
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+export default function Olive({ Component, pageProps }) {
+  return (
+    <Component {...pageProps} />
+  )
 }
 
-export default MyApp
+Olive.propTypes = {
+  Component: PropTypes.func,
+  pageProps: PropTypes.object
+}
