@@ -1,35 +1,15 @@
 {
+  "name": "olive",
+  "version": "0.0.1",
   "private": true,
-  "workspaces": {
-    "packages": [
-      "api",
-      "web"
-    ]
-  },
   "scripts": {
-    "lint": "eslint api web --cache"
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
   },
-  "devDependencies": {
-    "@redwoodjs/core": "^0.4.0"
-  },
-  "eslintConfig": {
-    "extends": "@redwoodjs/eslint-config",
-    "rules": {
-      "quotes": ["error", "double"],
-      "import/order": [
-        "error", {
-          "newlines-between": "never",
-          "alphabetize": {
-            "order": "asc",
-            "caseInsensitive": true
-          }
-        }
-      ],
-      "prettier/prettier": "off"
-    }
-  },
-  "engines": {
-    "node": ">=12",
-    "yarn": ">=1.15"
+  "dependencies": {
+    "next": "10.0.3",
+    "react": "17.0.1",
+    "react-dom": "17.0.1"
   }
 }
