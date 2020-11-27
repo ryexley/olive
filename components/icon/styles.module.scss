@@ -1,0 +1,8 @@
+$size: 1.5rem;
+
+.icon {
+  display: inline-block;
+  height: $size;
+  width: $size;
+  @apply mx-1;
+}
