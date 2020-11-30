@@ -5,7 +5,7 @@ export default function Home() {
   return (
     <Layout title="Home">
       <main>
-        <Icon iconSet="materialui" iconName="account_circle" color="pink-700" />
+        <Icon iconSet="materialui" iconName="menu_book" color="pink-700" />
         Bible Reading Plan
       </main>
     </Layout>

@@ -4624,11 +4624,6 @@ react-refresh@0.8.3:
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"
   integrity sha512-X8jZHc7nCMjaCqoU+V2I0cOhNW+QMBwSUkeXnTi8IPe6zaRWfn60ZzvFDZqWPfmSJfjub7dDW1SP0jaHWLu/hg==
 
-react-svgbox@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/react-svgbox/-/react-svgbox-1.0.0.tgz#3ee06ea5b220d777d8498ad726bd4a436df4b01c"
-  integrity sha512-vW8Elq4WCTrC6sIZJvW4lwTK6DIirXZmvNgGWTnSrRHIxkisoZzdiRfTXz9lFvgpsjfyePrA5wkNvKOdCKsiBg==
-
 react@17.0.1:
   version "17.0.1"
   resolved "https://registry.yarnpkg.com/react/-/react-17.0.1.tgz#6e0600416bd57574e3f86d92edba3d9008726127"
