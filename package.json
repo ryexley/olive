@@ -34,6 +34,6 @@
     "eslint-plugin-unicorn": "^56.0.1",
     "globals": "^15.14.0",
     "prettier": "^3.4.2",
-    "vite": "^5.4.11"
+    "vite": "^5.4.21"
   }
 }
